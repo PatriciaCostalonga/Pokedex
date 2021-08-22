@@ -12,7 +12,6 @@ export default function PokemonList({ data }) {
     return (
         <Layout>
             <div>
-                Pokedex
                 <div className={styles.pokemon__list}>
                 {pokemonList.map(pokemon => (
                     <li
@@ -25,11 +24,9 @@ export default function PokemonList({ data }) {
                     className={styles.card}
                     >
                     <Link to={`/pokemon/${pokemon.name}`}>
-                        <h1>{pokemon.name}</h1>
-                        <h4>{pokemon.id}</h4>
-                        
+                        <h2>{pokemon.name}</h2>
                         <img className={styles.thumbnail} src={pokemon.artwork} alt={pokemon.name} />
-
+                        <h4>ID Number: #{pokemon.id}</h4>
                     </Link>
                     </li>
                 ))}

@@ -24,15 +24,17 @@
     font-weight: 500;
 }
 
-.pokemon_list{
+.pokemon__list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center
 }
 
 .pokemon__list h2{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    text-transform: capitalize;
 }
 
 .pokemon__list h4{
