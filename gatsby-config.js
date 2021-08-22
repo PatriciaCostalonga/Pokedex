@@ -10,11 +10,17 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    
     {
-      resolve: `gatsby-source-pokeapi`,
+      resolve: "gatsby-source-graphql",
       options: {
-        nbOfPokemons: 251,
-      }
-    }
+        // This type will contain remote schema Query type
+        typeName: "POKEAPI",
+        // This is the field under which it's accessible
+        fieldName: "pokeapi",
+        // URL to query from
+        url: "https://graphql-pokeapi.vercel.app/api/graphql",
+      },
+    },
   ],
 }

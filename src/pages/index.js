@@ -2,26 +2,57 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout";
 import * as styles from "../styles/home.module.css";
-
-// import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
-export default function Home( {data} ) {
-  console.log(data)
-  // const [pokemon, setPokemon] = useState(["bulbasaur", "charmander"]);
+import classnames from 'classnames'
 
 
-  return (
-    <Layout>
-      <section className={styles.header}>
-        <div>
-          <h2>Design</h2>
-          <h3>Develop & Deploy</h3>
-          <p>Front-end developer based in London</p>
-          <Link className={styles.btn} to="/PokemonList">Pokedex</Link>
+export default function PokemonList({ data }) {
 
-        </div>
-        {/* <GatsbyImage image={getImage(data.file)} alt="Banner" /> */}
-      </section>
-    </Layout>
-  )
+    const pokemonList = data.pokeapi.pokemons.results;
+
+    return (
+        <Layout>
+            <div>
+                Pokedex
+                <div className={styles.pokemon__list}>
+                {pokemonList.map(pokemon => (
+                    <li
+                    key={pokemon.id}
+                    style={{
+                        textAlign: `center`,
+                        listStyle: `none`,
+                        display: `inline-block`,
+                    }}
+                    className={styles.card}
+                    >
+                    <Link to={`/pokemon/${pokemon.name}`}>
+                        <h1>{pokemon.name}</h1>
+                        <h4>{pokemon.id}</h4>
+                        
+                        <img className={styles.thumbnail} src={pokemon.artwork} alt={pokemon.name} />
+
+                    </Link>
+                    </li>
+                ))}
+                </div>
+            </div>
+        </Layout>
+    )
 }
+
+export const query = graphql`
+    query PokemonList {
+        pokeapi {
+        pokemons(limit: 251, offset: 0) {
+            count
+            results {
+            name
+            id
+            image
+            url
+            dreamworld
+            artwork
+            }
+        }
+        }
+    }
+`
