@@ -14,7 +14,7 @@ export default function PokemonList({ data }) {
         <Layout>
             <div>
                 Pokedex
-                <div className={styles.pokemon_list}>
+                <div className={styles.pokemon__list}>
                 {pokemonList.map(pokemon => (
                     <li
                     key={pokemon.id}
