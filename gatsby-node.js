@@ -15,11 +15,11 @@ exports.createPages = async ({ graphql, actions }) => {
   }
     `)
 
-    data.pokeapi.pokemons.results.name.forEach(node => {
+    data.pokeapi.pokemons.results.forEach(result => {
         actions.createPage({
-            path: '/pokemon/'+ node.name,
+            path: '/pokemon/'+ result.name,
             component: path.resolve('./src/templates/pokemon.js'),
-            context: { name: node.name }
+            context: { name: result.name }
         })
     })
 }
