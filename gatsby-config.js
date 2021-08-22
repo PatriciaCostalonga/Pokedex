@@ -21,6 +21,6 @@ module.exports = {
         // URL to query from
         url: "https://graphql-pokeapi.vercel.app/api/graphql",
       },
-    },
+    }
   ],
 }

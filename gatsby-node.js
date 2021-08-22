@@ -10,9 +10,9 @@ exports.createPages = async ({ graphql, actions }) => {
           results {
             name
           }
+        }
       }
-      }
-  }
+    }
     `)
 
     data.pokeapi.pokemons.results.forEach(result => {
@@ -23,4 +23,3 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 }
-
