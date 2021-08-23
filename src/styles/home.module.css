@@ -61,24 +61,24 @@
     margin: 20px 0;
 }
 
-/*-------------------------- IPAD PRO --------------------------*/
-@media screen and (max-width: 1366px) {
+/*-------------------------- mobile --------------------------*/
+@media screen and (max-width: 766px) {
     .pokemon__list{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        margin: 10px;
     }
 }
 
 /*-------------------------- IPAD --------------------------*/
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 1023px) {
     .pokemon__list{
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/*-------------------------- mobile --------------------------*/
-@media screen and (max-width: 900px) {
+/*-------------------------- IPAD PRO --------------------------*/
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
     .pokemon__list{
-        grid-template-columns: 1fr;
-        margin: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
