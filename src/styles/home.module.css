@@ -27,7 +27,6 @@
 .pokemon__list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center
 }
 
 .pokemon__list h2{
@@ -46,7 +45,9 @@
 .card{
     width: 230px;
     height: 350px;
-    margin: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -60,7 +61,24 @@
     margin: 20px 0;
 }
 
+/*-------------------------- IPAD PRO --------------------------*/
+@media screen and (max-width: 1366px) {
+    .pokemon__list{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*-------------------------- IPAD --------------------------*/
+@media screen and (max-width: 1024px) {
+    .pokemon__list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /*-------------------------- mobile --------------------------*/
-@media screen and (min-width: 900px) {
-    
+@media screen and (max-width: 900px) {
+    .pokemon__list{
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
 }
