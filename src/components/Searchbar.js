@@ -50,7 +50,7 @@ class Search extends Component {
      * defines the search index
      * read more in here https://github.com/bvaughn/js-search#configuring-the-search-index
      */
-    dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("isbn")
+    dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("id")
 
     dataToSearch.addIndex("name") // sets the index attribute for the data
     dataToSearch.addIndex("id") // sets the index attribute for the data
