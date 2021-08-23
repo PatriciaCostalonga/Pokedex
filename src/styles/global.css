@@ -268,4 +268,8 @@ footer p{
     .layout{
         margin: 20px 40px;
     }
+
+    html, body{
+        min-height: 100vh;
+    }
 }
